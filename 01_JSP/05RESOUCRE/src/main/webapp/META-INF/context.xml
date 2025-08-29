@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<Context>
+
+
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+    
+    <!-- CONNECTION OOL SETTING(DataSource) -->
+    <Resource driverClassName="com.mysql.cj.jdbc.Driver"
+    		url="jdbc:mysql://localhost/opendatadb"
+    		username="root"
+    		password="1234"
+    		name="jdbc/MysqlDB"
+    		type="javax.sql.DataSource"
+    		auth="Container"
+    		maxActive="10"	
+    		maxIdle="2"
+    		maxWait="5000"/> 
+    		<!-- 
+    			maxActive : 커넥션 최대 10개까지 생성 
+    			maxIdle : 여유 커넥션 2개
+    			maxWait : 연결이 안되면 5초 정도 대기(타임아웃 값)
+    		-->
+    
+</Context>
